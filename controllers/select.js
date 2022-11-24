@@ -26,7 +26,6 @@ const url = "https://api.sampleapis.com/simpsons/characters";
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     data.forEach((character) => {
       const button = document.createElement("button");
       button.innerHTML = character.name;

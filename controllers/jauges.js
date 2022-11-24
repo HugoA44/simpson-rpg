@@ -15,7 +15,6 @@ export function updateJauges(perso, enemy) {
     window.location.href = "end.html";
   }
   if (enemy.getHp() <= 0) {
-    console.log("test");
     //enregistre dans le localstorage que le joueur a gagné
     localStorage.setItem("isHeroDead", false);
     // redirect to end.html
