@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Battle</title>
+  </head>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+    rel="stylesheet"
+  />
+
+  <body class="end" id="end">
+    <div id="title"></div>
+    <video autoplay loop muted id="myVideo" width="100%" height="100%">
+      <source src="./img/ending.mp4" type="video/mp4" />
+    </video>
+  </body>
+  <script>
+    if (localStorage.getItem("isHeroDead") === "true") {
+      document.getElementById("title").innerHTML = `<h1>${localStorage.getItem(
+        "name"
+      )} est mort</h1>`;
+    } else {
+      document.getElementById("title").innerHTML = `<h1>Ennemi est mort</h1>`;
+    }
+  </script>
+  <script src="./controllers/index.js" type="module"></script>
+</html>

@@ -1,0 +1,379 @@
+/*GLOBAL*/
+
+body {
+  background-color: black;
+  height: 100vh;
+  background: url("./img/selectBackground.gif") center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: yellow;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: "VT323", monospace;
+}
+
+.btn, button {
+  background-color: yellow;
+  color: black;
+  border-radius: 8px;
+  border: none;
+  border-bottom: 7px solid #fad21f;
+  padding: 5px 15px 5px 15px;
+  font-size: 2vw;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn:hover, button:hover {
+  background-color: #e9f62c;
+  border-color: #cba407;
+}
+
+.btn:active, button:active {
+  background-color: #f5be19;
+  border-color: #e1bc17;
+}
+
+.btn-spell img {
+  height: 25px;
+  width: auto;
+}
+
+/* CHOIX PERSO */
+
+#inscription-bloc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s;
+}
+
+#persoName {
+  background-color: yellow;
+  color: white;
+  padding: 10px;
+  font-size: 1.5vw;
+  border: none;
+  border: 4px inset #600760;
+}
+
+#perso-select__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.perso-select__card {
+  height: 190px;
+  width: 220px;
+  margin: 40px;
+  background-repeat: no-repeat;
+  border: 5px solid yellow;
+  border-radius: 10px;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.perso-select__card:hover {
+  transform: scale(1.2);
+}
+
+.perso-select__card::after {
+  content: " ";
+  background-size: contain;
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+
+/*GAME*/
+
+.game {
+  background-image: url(./img/map1.png);
+  background-size: cover;
+  height: 100vh;
+}
+
+#game-bloc {
+  width: 80%;
+  height: 200px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#character-bloc,
+#monster-bloc {
+  width: 48px;
+  height: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  transform: scale(1.5);
+  transition: opacity 0.6s all;
+  position: relative;
+}
+
+#monster-bloc {
+  width: 90px;
+}
+
+#character-hp__container,
+#monster-hp__container {
+  content: " ";
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  top: 0;
+  left: 0;
+}
+
+#character-hp,
+#monster-hp {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#character-energy__container,
+#monster-energy__container {
+  content: " ";
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  top: -10px;
+  left: 0;
+}
+
+#character-energy,
+#monster-energy {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ACTION BLOC */
+
+#infos-bloc {
+  position: fixed;
+  left: 100px;
+  bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#actions-bloc {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  display: flex;
+}
+
+#spell-bloc,
+#counter-bloc,
+#log-bloc {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: 10px;
+}
+
+#log-bloc {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  overflow: hidden;
+  justify-content: flex-end;
+}
+#log-bloc p {
+  transition: 0.2s;
+}
+
+/* ANIMATIONS */
+
+.homerIdle {
+  animation: homerIdle 1.2s steps(4) infinite;
+  background-size: auto;
+  background: url("./img/homerIdle.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes homerIdle {
+  100% {
+    background-position: -196px;
+  }
+}
+.bartIdle {
+  animation: bartIdle 1.2s steps(7) infinite;
+  background-size: auto;
+  background: url("./img/bartIdle.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes bartIdle {
+  100% {
+    background-position: -370px;
+  }
+}
+
+.homerHit {
+  animation: homerHit 0.2s steps(2) infinite;
+  background-size: auto;
+  background: url("./img/homerHit.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes homerHit {
+  100% {
+    background-position: -144px;
+  }
+}
+.bartHit {
+  animation: bartHit 0.8s steps(6) infinite;
+  background-size: auto;
+  background: url("./img/bartHit.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes bartHit {
+  100% {
+    background-position: -279px;
+  }
+}
+
+.homerRun {
+  animation: homerRun 1.2s steps(4) infinite;
+  background-size: auto;
+  background: url("./img/homerRun.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes homerRun {
+  100% {
+    background-position: -204px;
+  }
+}
+.bartRun {
+  background-size: auto;
+  background: url("./img/bartRun.gif") left center;
+  background-repeat: no-repeat;
+}
+
+.monsterdIdle {
+  background-size: auto;
+  background: url("./img/IdleBurns.gif") left center;
+  background-repeat: no-repeat;
+}
+
+.homerAttack {
+  animation: homerAttack 1.2s steps(10);
+  background-size: auto;
+  background: url("./img/homerAttack.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes homerAttack {
+  100% {
+    background-position: -765px;
+  }
+}
+
+.homerAttack2 {
+  animation: homerAttack2 1.2s;
+  background-size: auto;
+  background: url("./img/homerAttack2.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes homerAttack2 {
+  100% {
+    transform: translateX(70vw);
+  }
+}
+.bartAttack2 {
+  animation: bartAttack2 1.2s;
+  background-size: auto;
+  background: url("./img/bartAttack2.png") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes bartAttack2 {
+  100% {
+    transform: translateX(70vw);
+  }
+}
+
+.bartAttack {
+  animation: homerAttack2 1.2s;
+  background-size: auto;
+  background: url("./img/bartAttack.gif") left center;
+  background-repeat: no-repeat;
+}
+
+@keyframes homerAttack2 {
+  100% {
+    transform: translateX(70vw);
+  }
+}
+.animAttack {
+  background-size: auto;
+  background: url("./img/AttackBurns.gif") left center;
+  background-repeat: no-repeat;
+}
+
+.animHitMonster {
+  background-size: auto;
+  background: url("./img/hitburns.gif") left center;
+  background-repeat: no-repeat;
+}
+
+.choose1 {
+  background-size: auto;
+  background: url("./img/chooseHomer.gif") center;
+  background-repeat: no-repeat;
+  filter: grayscale(100);
+}
+.choose2 {
+  background-size: auto;
+  background: url("./img/chooseBart.gif") center;
+  background-repeat: no-repeat;
+  filter: grayscale(100);
+}
+.selectBackground {
+  background-size: auto;
+  background: url("./img/selectBackground.gif") center;
+  background-repeat: no-repeat;
+}
